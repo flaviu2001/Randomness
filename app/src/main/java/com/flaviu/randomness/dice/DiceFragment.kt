@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -29,12 +28,24 @@ class DiceFragment : Fragment() {
         diceViewModel.rollPressed.observe(viewLifecycleOwner) {
             if (it) {
                 val editTest = binding.editTextNumber.text.toString()
-                if (editTest.isEmpty() || editTest.toInt() == 0) {
-                    Snackbar.make(requireView(), "Please enter a valid nonzero number", Snackbar.LENGTH_SHORT).show()
+                if (editTest.isEmpty()) {
+                    Snackbar.make(requireView(), "Please enter a valid number", Snackbar.LENGTH_SHORT).show()
                     diceViewModel.onRollPressedFinished()
                     return@observe
                 }
-                val numberDice = editTest.toInt()
+                val numberDice: Int
+                try{
+                    numberDice = editTest.toInt()
+                }catch (e: NumberFormatException) {
+                    Snackbar.make(requireView(), "Please enter a smaller number", Snackbar.LENGTH_SHORT).show()
+                    diceViewModel.onRollPressedFinished()
+                    return@observe
+                }
+                if (numberDice == 0) {
+                    Snackbar.make(requireView(), "Please enter a nonzero number", Snackbar.LENGTH_SHORT).show()
+                    diceViewModel.onRollPressedFinished()
+                    return@observe
+                }
                 if (numberDice >= 3)
                     binding.diceList.layoutManager = GridLayoutManager(activity, 3)
                 else binding.diceList.layoutManager = GridLayoutManager(activity, numberDice)

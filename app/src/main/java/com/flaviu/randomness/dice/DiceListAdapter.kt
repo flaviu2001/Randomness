@@ -2,7 +2,6 @@ package com.flaviu.randomness.dice
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.flaviu.randomness.R
 import com.flaviu.randomness.databinding.SimpleImageBinding
