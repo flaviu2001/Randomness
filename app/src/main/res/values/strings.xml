@@ -8,4 +8,7 @@
     <string name="dice">Dice</string>
     <string name="number_of_dice">Number of dice</string>
     <string name="roll">Roll</string>
+    <string name="number_of_coins">Number of coins:</string>
+    <string name="toss">Toss</string>
+    <string name="coins">Coins</string>
 </resources>

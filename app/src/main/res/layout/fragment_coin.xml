@@ -5,12 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.flaviu.randomness.dice.DiceViewModel" />
+            type="com.flaviu.randomness.coin.CoinViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".dice.DiceFragment">
+        tools:context=".coin.CoinFragment">
 
         <TextView
             android:id="@+id/textView"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:text="@string/number_of_dice"
+            android:text="@string/number_of_coins"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,20 +42,20 @@
             android:id="@+id/toss_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onRollPressed()}"
+            android:onClick="@{() -> viewModel.onTossPressed()}"
             android:text="@string/toss"
             app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editTextNumber" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dice_list"
+            android:id="@+id/coins_list"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="48dp"
             android:layout_marginRight="8dp"
-            android:layoutAnimation="@anim/dice_list_animation"
+            android:layoutAnimation="@anim/coin_list_animation"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

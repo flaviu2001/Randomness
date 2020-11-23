@@ -7,5 +7,8 @@
         <item
             android:id="@+id/nav_dice"
             android:title="@string/dice" />
+        <item
+            android:id="@+id/nav_coins"
+            android:title="@string/coins" />
     </group>
 </menu>

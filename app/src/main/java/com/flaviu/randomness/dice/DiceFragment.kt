@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.flaviu.randomness.PhotoTypeAdapter
 import com.flaviu.randomness.databinding.FragmentDiceBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -18,12 +19,12 @@ class DiceFragment : Fragment() {
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDiceBinding.inflate(inflater)
         diceViewModel = ViewModelProvider(this).get(DiceViewModel::class.java)
         binding.viewModel = diceViewModel
         binding.lifecycleOwner = this
-        val adapter = DiceListAdapter()
+        val adapter = PhotoTypeAdapter()
         binding.diceList.adapter = adapter
         diceViewModel.rollPressed.observe(viewLifecycleOwner) {
             if (it) {
@@ -41,8 +42,8 @@ class DiceFragment : Fragment() {
                     diceViewModel.onRollPressedFinished()
                     return@observe
                 }
-                if (numberDice == 0) {
-                    Snackbar.make(requireView(), "Please enter a nonzero number", Snackbar.LENGTH_SHORT).show()
+                if (numberDice == 0 || numberDice > 1000000) {
+                    Snackbar.make(requireView(), "Please enter a number between 0 and 1000000", Snackbar.LENGTH_SHORT).show()
                     diceViewModel.onRollPressedFinished()
                     return@observe
                 }
