@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.onRollPressed()}"
-            android:text="@string/toss"
+            android:text="@string/roll"
             app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/editTextNumber" />
