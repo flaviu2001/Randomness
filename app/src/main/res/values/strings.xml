@@ -11,4 +11,6 @@
     <string name="number_of_coins">Number of coins:</string>
     <string name="toss">Toss</string>
     <string name="coins">Coins</string>
+    <string name="valid_number">Please enter a valid number</string>
+    <string name="valid_number2">Please enter a number between 1 and 1000000</string>
 </resources>

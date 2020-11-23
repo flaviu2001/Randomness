@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.flaviu.randomness.PhotoTypeAdapter
+import com.flaviu.randomness.R
 import com.flaviu.randomness.databinding.FragmentCoinBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -27,20 +28,21 @@ class CoinFragment : Fragment() {
             if (it) {
                 val editTest = binding.editTextNumber.text.toString()
                 if (editTest.isEmpty()) {
-                    Snackbar.make(requireView(), "Please enter a valid number", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(requireView(), requireContext().getString(R.string.valid_number), Snackbar.LENGTH_SHORT).show()
                     coinViewModel.onTossPressedFinished()
                     return@observe
                 }
+                requireContext().getString(R.string.dice)
                 val numberCoins: Int
                 try{
                     numberCoins = editTest.toInt()
                 }catch (e: NumberFormatException) {
-                    Snackbar.make(requireView(), "Please enter a smaller number", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(requireView(), requireContext().getString(R.string.valid_number2), Snackbar.LENGTH_SHORT).show()
                     coinViewModel.onTossPressedFinished()
                     return@observe
                 }
                 if (numberCoins == 0 || numberCoins > 1000000) {
-                    Snackbar.make(requireView(), "Please enter a number between 1 and 1000000", Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(requireView(), requireContext().getString(R.string.valid_number2), Snackbar.LENGTH_SHORT).show()
                     coinViewModel.onTossPressedFinished()
                     return@observe
                 }
