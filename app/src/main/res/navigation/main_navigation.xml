@@ -13,4 +13,8 @@
         android:id="@+id/nav_coins"
         android:name="com.flaviu.randomness.coin.CoinFragment"
         android:label="@string/coins" />
+    <fragment
+        android:id="@+id/nav_range"
+        android:name="com.flaviu.randomness.range.RangeFragment"
+        android:label="@string/range" />
 </navigation>

@@ -1,7 +1,6 @@
 package com.flaviu.randomness
 
 import android.os.Bundle
-import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
@@ -25,14 +24,9 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
-        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_dice, R.id.nav_coins), drawerLayout)
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_dice, R.id.nav_coins, R.id.nav_range), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.toolbar_menu, menu)
-        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {

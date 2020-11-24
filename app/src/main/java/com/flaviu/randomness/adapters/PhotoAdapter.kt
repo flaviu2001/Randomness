@@ -1,10 +1,11 @@
-package com.flaviu.randomness
+package com.flaviu.randomness.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.flaviu.randomness.PhotoType
+import com.flaviu.randomness.R
 import com.flaviu.randomness.databinding.SimpleImageBinding
-
 
 class PhotoTypeAdapter : RecyclerView.Adapter<PhotoTypeHolder>() {
     var data = listOf<PhotoType>()

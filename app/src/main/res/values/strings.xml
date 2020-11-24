@@ -6,11 +6,21 @@
     <string name="action_settings">Settings</string>
 
     <string name="dice">Dice</string>
-    <string name="number_of_dice">Number of dice</string>
+    <string name="number_of_dice">Number of dice:</string>
     <string name="roll">Roll</string>
     <string name="number_of_coins">Number of coins:</string>
     <string name="toss">Toss</string>
     <string name="coins">Coins</string>
     <string name="valid_number">Please enter a valid number</string>
-    <string name="valid_number2">Please enter a number between 1 and 1000000</string>
+    <string name="valid_number2">Please enter a number between 1 and 1,000,000</string>
+    <string name="valid_number3">Please insert a valid number between -1e18 and 1e18 in each field</string>
+    <string name="valid_number4">From must not be larger than to</string>
+    <string name="valid_number5">The difference between from and to must be at most 1,000,000</string>
+    <string name="result_format">Result: %d</string>
+    <string name="result_format2">"Position %d:    %d"</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="generate">Generate</string>
+    <string name="range">Range</string>
+    <string name="shuffle">Shuffle</string>
 </resources>
