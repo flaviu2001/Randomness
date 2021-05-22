@@ -3,7 +3,6 @@
     <string name="nav_header_title">Swiss Army RNG</string>
     <string name="nav_header_subtitle">For all your random needs</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
     <string name="dice">Dice</string>
     <string name="number_of_dice">Number of dice:</string>
